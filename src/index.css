@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  background-color: rgb(233, 233, 233);
+  height: 100vh;
+  width: 100vw;
+}
+
+
+/* Home */
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-family: cursive;
+  padding: 0px 15px;
+}
+
+.title>h2 {
+  padding: 15px 0px;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.title>h2>a {
+  color: rgb(94, 94, 94);
+  font-size: 2.3rem;
+  text-decoration: none;
+}
+
+
+/* Modal */
+
+.modal h3 {
+  color: #025be2;
+  padding: 10px 0px 0px 0px;
+}
+
+.modal p {
+  font-weight: 500;
+  padding: 0px 5px;
+  color: rgb(94, 94, 94);
+  text-align: justify;
+  margin: 0px;
+  font-size: 1.05rem;
+  line-height: 23px;
+}
+
+.modal-button-div {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Inner Home */
+
+.inner-home {
+  height: 86vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-home h2 {
+  color: rgb(94, 94, 94);
+}
+
+.button-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-holder>button {
+  margin: 5px;
+}
+
+/* Sudoku */
+
+.sudoku-board {
+  display: grid;
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 360px;
+  border: 2px solid black;
+  background-color: #f9f9f9;
+}
+
+.sudoku-row {
+  display: flex;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.5em;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.sudoku-cell:focus {
+  background-color: #e0f7fa;
+}
+
+.bottom-border {
+  border-bottom: 2px solid black;
+}
+
+.right-border {
+  border-right: 2px solid black;
+}
+
+.number-buttons {
+  margin: 20px 0px 0px 0px;
+}
+
+.selected-number {
+  border: 2px solid #007bff;
+  background-color: #e7f1ff;
+  cursor: pointer;
+}
+
+.get-the-solution {
+  border: none;
+  font-size: 1.1rem;
+  color: #025be2;
+  text-decoration: underline;
+  margin: 0px;
+}
+
+.solution {
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solution h2 {
+  color: #025be2;
+  text-align: center;
+  margin: 15px 0px;
+}
