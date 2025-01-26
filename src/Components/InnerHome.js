@@ -73,18 +73,18 @@ function InnerHome(props) {
 
 
     const [isFetched, setIsFetched] = useState(false);
-    const [display, setDisplay] = useState("flex");
+    const [display, setDisplay] = useState("block");
 
     function fetched(val) {
         setIsFetched(val);
-        setDisplay("flex");
+        setDisplay("block");
     }
 
     useEffect(() => {
         if (isFetched) {
             setDisplay("none");
         } else {
-            setDisplay("flex");
+            setDisplay("block");
         }
     }, [isFetched]);
 
