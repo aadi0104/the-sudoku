@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/the-sudoku/static/css/main.c32c054a.css",
+    "main.css": "/the-sudoku/static/css/main.8cad4c8e.css",
     "main.js": "/the-sudoku/static/js/main.70d4ea09.js",
     "static/media/Fireworks.gif": "/the-sudoku/static/media/Fireworks.f97312f2ab104f69bfd4.gif",
     "static/media/LoaderGIF.gif": "/the-sudoku/static/media/LoaderGIF.16a262c36a6fb3fed467.gif",
     "index.html": "/the-sudoku/index.html",
-    "main.c32c054a.css.map": "/the-sudoku/static/css/main.c32c054a.css.map",
+    "main.8cad4c8e.css.map": "/the-sudoku/static/css/main.8cad4c8e.css.map",
     "main.70d4ea09.js.map": "/the-sudoku/static/js/main.70d4ea09.js.map"
   },
   "entrypoints": [
-    "static/css/main.c32c054a.css",
+    "static/css/main.8cad4c8e.css",
     "static/js/main.70d4ea09.js"
   ]
 }
