@@ -139,6 +139,7 @@ body {
   text-decoration: underline;
   margin: 0px;
   z-index: 105;
+  background-color: transparent;
 }
 
 .solution {
@@ -165,7 +166,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: 100;
-  opacity: 20%;
+  opacity: 80%;
 }
 
 .loader {
