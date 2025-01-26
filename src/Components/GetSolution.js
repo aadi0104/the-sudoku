@@ -6,15 +6,15 @@ function GetSolution() {
     const { initialBoard } = location.state;
 
     const [board, setBoard] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // Flag for loading state
-    const [isSolved, setIsSolved] = useState(false); // To track if the puzzle is solved
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSolved, setIsSolved] = useState(false);
 
     useEffect(() => {
         if (initialBoard?.length > 0 && !isSolved) {
-            setBoard(JSON.parse(JSON.stringify(initialBoard))); // Set the initial board
-            solveSudoku(JSON.parse(JSON.stringify(initialBoard))); // Clone board for safety
+            setBoard(JSON.parse(JSON.stringify(initialBoard)));
+            solveSudoku(JSON.parse(JSON.stringify(initialBoard)));
         }
-    }, [initialBoard]); // This effect runs only once when initialBoard is loaded
+    }, [initialBoard]);
 
     const isSafe = (board, row, col, num) => {
         for (let i = 0; i < 9; i++) {
@@ -35,7 +35,6 @@ function GetSolution() {
     };
 
     const solveSudoku = (board) => {
-        // Function to solve the board
         const solve = () => {
             for (let row = 0; row < 9; row++) {
                 for (let col = 0; col < 9; col++) {
@@ -47,39 +46,37 @@ function GetSolution() {
                                 if (solve()) {
                                     return true;
                                 } else {
-                                    board[row][col] = 0; // Backtrack
+                                    board[row][col] = 0;
                                 }
                             }
                         }
-                        return false; // If no number is valid, return false
+                        return false;
                     }
                 }
             }
-            return true; // If the whole board is filled correctly
+            return true;
         };
 
-        // Start solving the board
         if (solve()) {
-            setBoard(board); // If solved, update the state with the solved board
-            setIsLoading(false); // Stop loading state
-            setIsSolved(true); // Mark puzzle as solved to prevent further updates
+            setBoard(board);
+            setIsLoading(false);
+            setIsSolved(true);
         }
     };
 
-    // Render the Sudoku board only when the solution is ready
     const rows = [];
     for (let rowIndex = 0; rowIndex < board.length; rowIndex++) {
         const cells = [];
         for (let colIndex = 0; colIndex < board[rowIndex].length; colIndex++) {
-            const isReadOnly = initialBoard[rowIndex][colIndex] !== 0; // Check if the cell is part of the initial puzzle
+            const isReadOnly = initialBoard[rowIndex][colIndex] !== 0;
 
             cells.push(
                 <span
                     key={`${rowIndex}-${colIndex}`}
                     className={`sudoku-cell ${(rowIndex + 1) % 3 === 0 && rowIndex !== 8 ? 'bottom-border' : ''} ${(colIndex + 1) % 3 === 0 && colIndex !== 8 ? 'right-border' : ''}`}
                     style={{
-                        backgroundColor: isReadOnly ? 'rgb(137, 194, 231)' : '#fff', // Assign background color for read-only cells
-                        cursor: 'default', // Disable cursor to indicate it's read-only
+                        backgroundColor: isReadOnly ? 'rgb(137, 194, 231)' : '#fff',
+                        cursor: 'default',
                     }}
                 >
                     {board[rowIndex][colIndex] === 0 ? '' : board[rowIndex][colIndex]}
@@ -98,9 +95,9 @@ function GetSolution() {
             <div>
                 <h2>Sudoku Solution</h2>
                 {isLoading ? (
-                    <div>Loading...</div>  // Show loading indicator until the solution is found
+                    <div>Loading...</div>
                 ) : (
-                    <div>{rows}</div>  // Render the solved board
+                    <div>{rows}</div>
                 )}
             </div>
         </div>

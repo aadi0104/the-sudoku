@@ -17,6 +17,7 @@ body {
 
 .title {
   width: 100%;
+  z-index: 105;
   text-align: center;
   font-family: cursive;
   padding: 0px 15px;
@@ -78,6 +79,7 @@ body {
 
 .button-holder>button {
   margin: 5px;
+  z-index: 105;
 }
 
 /* Sudoku */
@@ -136,6 +138,7 @@ body {
   color: #025be2;
   text-decoration: underline;
   margin: 0px;
+  z-index: 105;
 }
 
 .solution {
@@ -149,4 +152,35 @@ body {
   color: #025be2;
   text-align: center;
   margin: 15px 0px;
+}
+
+
+.celebration {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-image: url("./Assets/Fireworks.gif");
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+  opacity: 20%;
+}
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 200;
+}
+
+.loader img {
+  height: 100px;
 }

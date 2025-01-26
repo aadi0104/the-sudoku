@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Sudoku from "./Sudoku";
+import Loader from "../Assets/LoaderGIF.gif"
 
 function InnerHome(props) {
 
@@ -70,21 +71,41 @@ function InnerHome(props) {
         setReset(val);
     }
 
+
+    const [isFetched, setIsFetched] = useState(false);
+    const [display, setDisplay] = useState("flex");
+
+    function fetched(val) {
+        setIsFetched(val);
+        setDisplay("flex");
+    }
+
+    useEffect(() => {
+        if (isFetched) {
+            setDisplay("none");
+        } else {
+            setDisplay("flex");
+        }
+    }, [isFetched]);
+
     return (
-        <div className="inner-home">
-            <div>
-                <div className="button-holder">
-                    <Button variant="primary" onClick={() => { props.openModal(); changeTrue(); }}>New Game</Button>
-                    <Button variant="primary" onClick={() => handleReset(true)}>Reset</Button>
-                </div>
+        <>
+            <div className="inner-home">
                 <div>
-                    <h2>
-                        Time: {formatTime(time)}
-                    </h2>
+                    <div className="button-holder">
+                        <Button variant="primary" onClick={() => { props.openModal(); changeTrue(); fetched(false); }}>New Game</Button>
+                        <Button variant="primary" onClick={() => handleReset(true)}>Reset</Button>
+                    </div>
+                    <div>
+                        <h2>
+                            Time: {formatTime(time)}
+                        </h2>
+                    </div>
+                    <Sudoku change={change} reset={reset} pauseTimer={pauseTimer} fetched={fetched} handleReset={handleReset} changeFalse={changeFalse} />
                 </div>
-                <Sudoku change={change} reset={reset} handleReset={handleReset} changeFalse={changeFalse} />
             </div>
-        </div>
+            {!isFetched && <div className="loader" style={{ display }}><div><img src={Loader} alt="loader" /></div></div>}
+        </>
     );
 }
 
